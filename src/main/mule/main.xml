@@ -10,11 +10,9 @@ http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/
 		<scatter-gather doc:name="Scatter-Gather" doc:id="30677c2b-e659-467a-a5a4-dc7672269e37" >
 			<route >
 				<flow-ref doc:name="accounts Flow" doc:id="e783dd0e-28bc-4d21-abd2-d6fdce7ebb6d" name="accounts"/>
-				<logger level="INFO" doc:name="Logger" doc:id="d16fe9a3-83a8-4a85-9461-b157bbfc8338" message="#[payload]"/>
 			</route>
 			<route >
 				<flow-ref doc:name="flights Flow" doc:id="8e89122b-b49b-4fb8-9469-65389194fb6c" name="flights"/>
-				<logger level="INFO" doc:name="Logger" doc:id="b78267b2-21fa-4d1f-88e3-309d4f4a0c3f" message="#[payload]"/>
 			</route>
 		</scatter-gather>
 		<choice doc:name="Choice" doc:id="4ffe0d4e-158d-40a9-aad4-420dce9b24ee" >

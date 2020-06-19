@@ -25,7 +25,6 @@ http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/
 }]]]></http:query-params>
 		</http:request>
 		<json:validate-schema doc:name="validateAccount" doc:id="c5f1f8e3-ddd9-414d-800f-8d453bed93a9" schema="schemas/accountsSchema.json"/>
-		<set-payload value="#[[]]" doc:name="Set Payload" doc:id="08ad55f7-0281-46f0-a88e-634a4c897ed7" />
 	</flow>
 	<flow name="flights" doc:id="dd9ee723-226c-4a97-ae7f-ddc8448f71ce" >
 		<http:listener doc:name="HTTP: GET /flights" doc:id="f9103d96-c52a-44fb-9155-87e29a484bbc" config-ref="HTTP_Listener_config" path="/flights">
@@ -38,6 +37,5 @@ http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/
 		<xml-module:validate-schema doc:name="validateFlight" doc:id="80820910-7c62-4e6c-af6c-b84f84e0acbf" schemas="schemas/flightsSchema.xsd" config-ref="XML_Config">
 			<xml-module:content ><![CDATA[#[payload.body]]]></xml-module:content>
 		</xml-module:validate-schema>
-		<set-payload value="#[null]" doc:name="Set Payload" doc:id="2b606a47-07bd-4a47-bbc8-81a951c7d80b" />
 	</flow>
 </mule>
